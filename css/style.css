@@ -1,0 +1,103 @@
+html,body {
+		background-color: #EDF1F7;
+	}
+* {
+		margin: 0;
+		padding: 0;
+		/* 清除内外边距 */
+	}
+
+	ul {
+		list-style: none;
+		/* 去掉列表样式小点 */
+	}
+
+	li {
+		list-style: none;
+	}	
+	.clearfix:before,
+	.clearfix:after {
+		/* 清除浮动 */
+		display: table;
+		content: "";
+	}
+
+	.clearfix:after {
+		clear: both;
+	}
+
+	/* css初始化结束 */
+
+	/* 页面头部分 */
+	.header {
+		padding: 30px;
+		margin: 0;
+		
+	}
+	.logos img {
+		width: 100px;
+		height: 100px;
+		padding: 25px;
+		float: left;
+	}
+	.header h3 {
+		display: block;
+		float: right;
+		line-height: 70px;
+	}
+	.login_box {
+		width: 30%;
+		border:1px solid #DDDDDD;
+		border-radius: 8px;
+		padding: 15px;
+		background-color: #DFF0D8;
+		box-shadow: 0 2px 1px rgba(0, 0, 0.2, 0.1);
+	}
+	.login_text h4 {
+		font-size: 30px;
+		font-weight:bold ;
+		letter-spacing: 5px;
+	}
+	.rpwd {
+		padding: 10px;
+	}
+	.rpwd a {
+		text-decoration: none;
+	}
+	.box_radio {
+		/* text-align: center; */
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	
+/* 	.pwd {
+		display: block;
+		z-index: 3;
+		float: right;
+		margin-left: 100px;
+	} */
+	
+	.form-control-feedback {
+		pointer-events:bounding-box; 
+	}
+	
+@media (max-width:320px) {
+	.logos {
+		margin-left: -50px;
+	}
+}
+@media (max-width:768px) {
+	.login_box {
+		width: 40%;
+	}
+}
+@media (max-width:425px) {
+	.box_left {
+		display: none;
+	}
+	.login_box {
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+}

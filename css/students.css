@@ -1,0 +1,57 @@
+.stu_box {
+	border: 1px solid #DDDDDD;
+}
+.tab_th th{
+	text-align: center;
+}
+.page_box div{
+	padding: 0px;
+}
+.pag_main {
+	width: 30%;
+	margin-left: 35%;
+	text-align: center;
+	
+}
+.class_tab>tbody>tr>td {
+	padding: 15px;
+	font-weight: bold;
+}	
+.class_tab>tbody>tr>th {
+	font-size: 19px;
+	font-weight: bold;
+	background-color: #F7F7F9;
+}
+
+@media (max-width:1024px) {
+	.pag_main {
+		width: 40%;
+		margin-left: 30%;
+		text-align: center;
+		
+	}
+}
+@media (max-width:425px) {
+	.pag_main {
+		width: 80%;
+		margin-left: 10%;
+		text-align: center;
+		
+	}
+}
+@media (max-width:375px) {
+	.pag_main {
+		width: 100%;
+		/* margin-left: 1%; */
+		text-align: center;
+		margin: 0px;
+		
+	}
+}
+@media (max-width:335px) {
+
+	.stu_box {
+		margin: 0px;
+		padding: 0px;
+	}
+}

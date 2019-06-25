@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name=viewport content="width=device-width,initial-scale=1">
+		<title>登录页面</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/style.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+
+			<div class="row header">
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+					<div class="logos"><img src="../imgs/book.png" /></div>
+				</div>
+				<div class="col-lg-2 col-md-3 col-sm-4 col-xs-10">
+					<h3>教务管理系统</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 box_left">
+					<h1>教育成就未来！</h1>
+				</div>
+				<form>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 login_box">
+						<div class="text-center login_text">
+							<h4>欢迎登录</h4>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">用户名:</label>
+							<input type="text" class="form-control" placeholder="请输入用户名">
+						</div>
+						<div class="form-group has-feedback ">
+							<label for="exampleInputPassword1">用户密码:</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
+							<span class="glyphicon glyphicon-eye-close form-control-feedback" id="pwd"></span>
+						</div><!-- open -->
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="验证码" aria-describedby="basic-addon2">
+							<span class="input-group-addon">放验证码</span>
+						</div>
+						<!-- <div class="rpwd"><a href="#">找回密码</a></div> -->
+						<div class="box_radio">
+							<b>用户类型:</b>
+							<label class="radio-inline">
+								<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 学生
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 教师
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 管理员
+							</label>
+						</div>
+
+						<button type="button" class="btn btn-default btn-lg btn-block"><a href="home.html">登录</a></button>
+						<br />
+						<blockquote>
+							<p>请直接点击登录！</p>
+							<footer><a href="admin.html">管理员模板</a></footer>
+						</blockquote>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

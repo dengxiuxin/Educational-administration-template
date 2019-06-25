@@ -1,0 +1,94 @@
+.stu_box {
+	border: 1px solid #DDDDDD;
+}
+.tab_th th{
+	text-align: center;
+	background-color: #31B0D5;
+	font-size: 16px;
+}
+.page_box div{
+	padding: 0px;
+}
+.pag_main {
+	width: 30%;
+	margin-left: 35%;
+	text-align: center;
+	
+}
+.btn_box {
+	width: 20%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+}
+
+.tite_box {
+	width: 60%;
+	float: left;
+	text-align: center;
+	}
+
+.admin_btn {
+	padding: 30px;
+}
+.admin_select {
+	padding: 30px;
+	border: 1px solid #CCCCCC;
+	margin: 15px;
+	display: none;
+}
+.admin_create {
+	padding: 30px;
+	border: 1px solid #CCCCCC;
+	margin: 15px;
+	display: none;
+	}
+.box_radio {
+	margin-top: 8px;
+	}
+.box_radio_a {
+	margin-bottom: 8px;
+	}
+		
+.class_tab>tbody>tr>td {
+	padding: 15px;
+	font-weight: bold;
+}	
+.class_tab>tbody>tr>th {
+	font-size: 19px;
+	font-weight: bold;
+	background-color: #F7F7F9;
+}
+
+@media (max-width:1024px) {
+	.pag_main {
+		width: 40%;
+		margin-left: 30%;
+		text-align: center;
+		
+	}
+}
+@media (max-width:425px) {
+	.pag_main {
+		width: 80%;
+		margin-left: 10%;
+		text-align: center;
+		
+	}
+}
+@media (max-width:375px) {
+	.pag_main {
+		width: 100%;
+		/* margin-left: 1%; */
+		text-align: center;
+		margin: 0px;
+		
+	}
+}
+@media (max-width:335px) {
+
+	.stu_box {
+		margin: 0px;
+		padding: 0px;
+	}
+}

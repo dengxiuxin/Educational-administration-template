@@ -1,0 +1,106 @@
+.tea_box {
+	border: 1px solid #DDDDDD;
+}
+
+.tab_th th {
+	text-align: center;
+	background-color: #5BC0DE;
+}
+
+.pag_main {
+	width: 30%;
+	margin-left: 35%;
+	text-align: center;
+
+}
+
+
+.btn_box {
+	width: 20%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+}
+
+.form-control {
+
+	height: 27px;
+	text-align: center;
+}
+
+#tab_ipu {
+	padding: 1px;
+	padding-top: 3px;
+	margin: 1px;
+	text-align: center;
+}
+
+.tite_box {
+	width: 60%;
+	float: left;
+	text-align: center;
+}
+
+.table>tbody>tr>.btn_btn {
+	padding: 1px;
+}
+
+.class_tab>tbody>tr>td {
+	padding: 15px;
+	font-weight: bold;
+}
+
+.class_tab>tbody>tr>th {
+	font-size: 19px;
+	font-weight: bold;
+}
+.cla_td{
+	text-align: center;
+	background-color: #5BC0DE;
+	font-weight: bold;
+	font-size: 19px;
+}
+
+@media (max-width:1500px) {
+	.form-control {
+		width: 160px;
+	}
+}
+
+@media (max-width:1024px) {
+	.pag_main {
+		width: 40%;
+		margin-left: 30%;
+		text-align: center;
+	}
+	.form-control {
+		width: 110px;
+	}
+}
+
+@media (max-width:425px) {
+	.pag_main {
+		width: 80%;
+		margin-left: 10%;
+		text-align: center;
+
+	}
+}
+
+@media (max-width:375px) {
+	.pag_main {
+		width: 100%;
+		/* margin-left: 1%; */
+		text-align: center;
+		margin: 0px;
+
+	}
+}
+
+@media (max-width:335px) {
+
+	.stu_box {
+		margin: 0px;
+		padding: 0px;
+	}
+}
