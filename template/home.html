@@ -3,12 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name=viewport content="width=device-width,initial-scale=1">
-		<title>主页面</title>
-		<link rel="stylesheet" href="../css/bootstrap.min.css" />
-		<link rel="stylesheet" href="../css/home.css" />
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
-		<script src="../js/home.js"></script>
+		<title>学生信息管理</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/home.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/home.js"></script>
+		<link rel="stylesheet" href="css/students.css" />
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -21,19 +22,19 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#"><img src="../imgs/book.png" width="50px" height="50px"/></a>
+					<a class="navbar-brand" href="#"><img src="imgs/book.png" width="50px" height="50px" /></a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<form class="navbar-form navbar-right">
 						<div class="input-group">
-						  <input type="text" class="form-control" placeholder="信息查询">
-						  <span class="input-group-btn">
-							<button class="btn btn-default" type="button">搜索</button>
-						  </span>
+							<input type="text" class="form-control" placeholder="信息查询">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button">搜索</button>
+							</span>
 						</div>
-						
+
 					</form>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
@@ -42,16 +43,31 @@
 							<ul class="dropdown-menu user_infos">
 								<li>
 									<div>
-										<b>姓名:</b><a href="#">李小红</a>
+										<b>姓名:</b>
+										<?php echo $user['name'];?>
 									</div>
 									<div>
-										<b>身份:</b><a href="#">学生</a>
+										<b>身份:</b>
+										<?php echo $user['type'];?>
 									</div>
-									</li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
+								</li>
+								<li>
+									<div>
+										<b>性别:</b>
+										<?php echo $user['gender'];?>
+									</div>
+								</li>
+								<li>
+									<div>
+										<b>学号:</b>
+										<?php echo $user['studentid'];?>
+									</div>
+								</li>
 								<li role="separator" class="divider"></li>
-								<li class=" text-center"><button type="button" class="btn btn-info">退出登录</button></li>
+								<li class=" text-center">
+										<a type="button" class="btn btn-info" href="user.php?a=login">退出登录</a>
+								</li>
+
 							</ul>
 						</li>
 					</ul>
@@ -59,7 +75,264 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 		<!-- <iframe id="iframe" name="frame" frameborder="0" width="100%"  src="students.html"></iframe> -->
-		<iframe id="iframe" name="frame" frameborder="0" width="100%" height="100%" src="teacher.html"></iframe>
-		<!-- <iframe id="iframe" name="frame" frameborder="0" width="100%" height="100%" src="admin.html"></iframe> -->
+
+		<div class="container stu_box">
+
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active text-center"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">学生表</a></li>
+				<li role="presentation" class="text-center"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">课程表</a></li>
+				<li role="presentation" class="text-center"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">任课教师表</a></li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="home">
+					<table class="table table-bordered text-center">
+						<thead>
+							<h4 class="text-center"><?php echo $clssinfo['grade'];?><?php echo $clssinfo['theclass'];?></h4>
+						</thead>
+						<tr class="tab_th">
+							<th>序号</th>
+							<th>姓名</th>
+							<th>性别</th>
+							<th>语文成绩</th>
+							<th>数学成绩</th>
+							<th>英语成绩</th>
+							<th>平均分</th>
+							<th>总分</th>
+							<th>名次</th>
+						</tr>
+						<tbody>
+							<i id="foech"><?php foreach($data as $index => $res) : ?></i>
+							<tr id="tr">
+								<td>
+									<?php echo $index+1 ?>
+								</td>
+								<td>
+									<?php echo $res['name']; ?>
+								</td>
+								<td>
+									<?php echo $res['gender']; ?>
+								</td>
+								<td id="chinese">
+									<?php echo $res['chinese']; ?>
+								</td>
+								<td id="math">
+									<?php echo $res['math']; ?>
+								</td>
+								<td id="english">
+									<?php echo $res['english']; ?>
+								</td>
+								<td id="avge"></td>
+								<td id="total"></td>
+								<td id="lost"></td>
+							</tr>
+							<?php endforeach;?>
+						</tbody>
+
+
+
+
+
+					</table>
+					<div class="pag_main">
+						<div class="btn-group" role="group" aria-label="...">
+							<button type="button" class="btn btn-default">首页</button>
+							<button type="button" class="btn btn-default">上一页</button>
+							<div class="btn-group dropup" role="group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+								 aria-expanded="false">
+									1
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+								</ul>
+							</div>
+							<button type="button" class="btn btn-default">下一页</button>
+							<button type="button" class="btn btn-default">末页</button>
+						</div>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="profile">
+					<table class="table table-bordered text-center class_tab">
+						<thead>
+							<h4 class="text-center"><?php echo $clssinfo['grade'];?><?php echo $clssinfo['theclass'];?></h4>
+						</thead>
+						<tr class="tab_th">
+							<th></th>
+							<th>周一</th>
+							<th>周二</th>
+							<th>周三</th>
+							<th>周四</th>
+							<th>周五</th>
+							<th>周六</th>
+							<th>周日</th>
+
+						</tr>
+						<tr>
+							<td>时间一</td>
+							<td>科目一</td>
+							<td>科目一</td>
+							<td>科目一</td>
+							<td>科目一</td>
+							<td>科目五</td>
+							<td>科目三</td>
+							<td>科目二</td>
+						</tr>
+						<tr>
+							<td>时间二</td>
+							<td>科目一</td>
+							<td>科目三</td>
+							<td>科目一</td>
+							<td>科目二</td>
+							<td>科目五</td>
+							<td>科目三</td>
+							<td>科目二</td>
+						</tr>
+						<tr>
+							<td>时间三</td>
+							<td>科目二</td>
+							<td>科目一</td>
+							<td>科目二</td>
+							<td>科目一</td>
+							<td>科目五</td>
+							<td>科目三</td>
+							<td>科目二</td>
+						</tr>
+						<tr>
+							<td>时间四</td>
+							<td>科目一</td>
+							<td>科目二</td>
+							<td>科目一</td>
+							<td>科目一</td>
+							<td>科目五</td>
+							<td>科目三</td>
+							<td>科目二</td>
+						</tr>
+						<tr>
+							<td>时间五</td>
+							<td>科目一</td>
+							<td>科目三</td>
+							<td>科目四</td>
+							<td>科目一</td>
+							<td>科目五</td>
+							<td>科目三</td>
+							<td>科目二</td>
+						</tr>
+						<tr>
+							<td>时间六</td>
+							<td>科目一</td>
+							<td>科目三</td>
+							<td>科目五</td>
+							<td>科目一</td>
+							<td>科目五</td>
+							<td>科目三</td>
+							<td>科目二</td>
+						</tr>
+					</table>
+
+				</div>
+				<div role="tabpanel" class="tab-pane" id="messages">
+					<table class="table table-striped text-center" style="width: 50%; margin-left: 25%;">
+						<thead>
+							<h4 class="text-center"><?php echo $clssinfo['grade'];?><?php echo $clssinfo['theclass'];?></h4>
+						</thead>
+						<tr class="tab_th">
+							<th>科目</th>
+							<th>任教老师</th>
+						</tr>
+						<tr>
+							<td>科目1</td>
+							<td>某某老师</td>
+						</tr>
+						<tr>
+							<td>科目2</td>
+							<td>某某老师</td>
+						</tr>
+						<tr>
+							<td>科目3</td>
+							<td>某某老师</td>
+						</tr>
+						<tr>
+							<td>科目4</td>
+							<td>某某老师</td>
+						</tr>
+						<tr>
+							<td>科目5</td>
+							<td>某某老师</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+		</div>
 	</body>
+	<script type='text/javascript'>
+		$(document).ready(function() {
+			
+			var tr = $("tbody #tr");
+
+			var ch = 0;
+			var ma = 0;
+			var en = 0;
+			var sum = 0;
+			var avg = 0;
+			var avge = 0;
+			var _sumarr = [];
+			var sumarr = [];
+
+			for (i = 0; i < tr.length; i++) {
+				tr.eq(i).each(function() {
+					ch = $("tbody #chinese").eq(i).text() * 1;
+					ma = $("tbody #math").eq(i).text() * 1;
+					en = $("tbody #english").eq(i).text() * 1;
+
+					sum = ch + ma + en;
+					avg = sum / 3;
+					avge = avg.toFixed(2);
+					$("tbody #avge").eq(i).html(avge);
+					$("tbody #total").eq(i).html(sum);
+					_sumarr.push(sum);
+					sumarr.push(sum);
+				});
+			}
+
+			function popSort(arr) {
+				if (arr == null) return arr;
+				for (var i = 0; i < arr.length; i++) {
+					for (var j = 0; j < arr.length; j++) {
+						if (arr[j] < arr[j + 1]) {
+							var temp = arr[j + 1];
+							arr[j + 1] = arr[j];
+							arr[j] = temp;
+						}
+					}
+				}
+			}
+			popSort(sumarr);
+
+
+			var total = $("tbody #total"); //总分列
+			var los = $("tbody #lost"); //对应排名
+			var lost;
+
+			for (var i = 0; i < sumarr.length; i++) {
+				for (var j = 0; j < _sumarr.length; j++) {
+					if (sumarr[i] == _sumarr[j]) {
+						los.eq(j).html(i+1);
+						break;
+					} else {
+					}
+				}
+
+
+			}
+
+
+
+		})
+	</script>
 </html>

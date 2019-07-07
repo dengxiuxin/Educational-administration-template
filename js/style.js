@@ -1,13 +1,15 @@
 $(document).ready(function() {
 					$("#pwd").click(function() {
-						if ($("#pwd").hasClass("glyphicon-eye-open") == true) {
+						if ($("#pwd").hasClass("glyphicon-eye-open")) {
+							
 							$("#pwd").removeClass("glyphicon-eye-open");
 							$("#pwd").addClass("glyphicon-eye-close");
-							$(".form-control").attr("type", "text");
+							
+							$(".pwds").attr("type", "password");
 						} else {
 							$("#pwd").removeClass("glyphicon-eye-close");
 							$("#pwd").addClass("glyphicon-eye-open");
-							$(".form-control").attr("type", "password");
+							$(".pwds").attr("type", "text");
 						}
 					});
 				});

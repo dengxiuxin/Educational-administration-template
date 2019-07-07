@@ -2,7 +2,7 @@
 	border: 1px solid #DDDDDD;
 }
 .tab_th th{
-	text-align: center;
+	text-align: center!important;
 }
 .page_box div{
 	padding: 0px;
